@@ -1,4 +1,4 @@
-# Local Bridge Backend (P0)
+# Local Bridge Backend (P0) 
 
 Google Cloud Run(Docker) 배포를 전제로 한 FastAPI 백엔드. 챗봇의 의도 분류에는
 `google-genai` SDK(Gemini, Vertex AI 모드)를 쓰고, 실제 안내 문구는 항상 사전
