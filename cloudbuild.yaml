@@ -40,7 +40,8 @@ steps:
       # "No API key was provided" 에러로 죽은 적이 있다) 조용히 깨진다.
       # FIREBASE_CREDENTIALS_JSON처럼 시크릿인 값은 여기 넣지 않고
       # --set-secrets(Secret Manager 연동)로 별도 관리한다.
-      - --set-env-vars=GOOGLE_GENAI_USE_VERTEXAI=true,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=us-central1,GENAI_MODEL=gemini-2.5-flash,DISCOVERY_ENGINE_ID=capstone-design-document_1786499678311,DISCOVERY_ENGINE_LOCATION=global
+      # update로 지정해 콘솔에서 설정한 FIREBASE_STORAGE_BUCKET 등을 보존한다.
+      - --update-env-vars=GOOGLE_GENAI_USE_VERTEXAI=true,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,GOOGLE_CLOUD_LOCATION=us-central1,GENAI_MODEL=gemini-2.5-flash,DISCOVERY_ENGINE_ID=capstone-design-document_1786499678311,DISCOVERY_ENGINE_LOCATION=global
       # Secret Manager의 service_account_firebase 시크릿(Firebase 서비스 계정
       # 키 JSON 원문)을 FIREBASE_CREDENTIALS_JSON 환경변수로 그대로 주입한다
       # — core/firebase.py가 이 값을 json.loads()로 바로 파싱하므로 시크릿
